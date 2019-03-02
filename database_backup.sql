@@ -10,6 +10,7 @@ LANGUAGE SQL
     IF user_exist = 0 THEN
       CREATE USER 'anychart_user'@'localhost' IDENTIFIED BY 'anychart_pass';
       GRANT ALL PRIVILEGES ON anychart_db.* TO 'anychart_user'@'localhost';
+      GRANT ALL PRIVILEGES ON anychart_db.* TO 'anychart_user'@'%';
       FLUSH PRIVILEGES;
     END IF;
     CREATE TABLE IF NOT EXISTS fruits (
